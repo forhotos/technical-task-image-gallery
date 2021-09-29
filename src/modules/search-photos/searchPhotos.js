@@ -81,6 +81,7 @@ export default function SearchPhotos() {
                     {CATEGORIES.map((item) => {
                         return (
                             <div
+                                key={`category-item-${item}`}
                                 className="category"
                                 style={{
                                     background: `url('/assets/${item}.jpg')`,

@@ -126,7 +126,7 @@ button[class^=card-button] {
     height: 100%;
 }
 
-.fade {
+.modal {
     background-color: rgba(0,0,0,.6);
     cursor: zoom-out;
 }

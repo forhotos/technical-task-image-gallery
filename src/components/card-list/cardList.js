@@ -147,6 +147,7 @@ export default function CardList(props) {
             })}
             {modalPhoto &&
             <Modal
+                animation={false} //findDOMNode is deprecated in StrictMode
                 show={show}
                 onHide={() => setShow(false)}
                 onExiting={() => setModalPhoto(null)}
