@@ -35,7 +35,7 @@ export default function SearchResults() {
     }, []);
 
     useEffect(() => {
-        let args = page > 1 ? { query: query, perPage: 10, page: page } : { query: query, perPage: 10};
+        let args = page > 1 ? { query: query, perPage: 20, page: page } : { query: query };
         query !== ''  && api.search
             .getPhotos(args)
             .then(photos => {
@@ -57,7 +57,7 @@ export default function SearchResults() {
                         Results for {query}
                     </span>
                 </div>
-                {!pics.length && <div className="loading">Loading...</div>}
+                {!pics.length && <div className="no-data">Loading...</div>}
                 {!!pics.length &&
                 <CardList
                     pics={pics}

@@ -15,14 +15,15 @@ export default function SearchPhotos() {
     const [pics, setPics] = useState([]);
 
         useEffect(() => {
-        if (!localStorage.getItem('likes')) {
+            window.scrollTo(0,0);
+            if (!localStorage.getItem('likes')) {
             localStorage.setItem('likes', '');
         }
     });
 
     useEffect(() => {
         api.photos
-            .list({perPage: 50})
+            .list({perPage: 24})
             .then(photos => {
                 const { results } = photos.response;
                 results && setPics(results);
@@ -114,9 +115,9 @@ export default function SearchPhotos() {
 
                 </div>
                 {!pics.length &&
-                <no-data>
+                <div className="no-data">
                     No Data
-                </no-data>}
+                </div>}
                 {!!pics.length &&
                 <CardList
                     pics={pics}
