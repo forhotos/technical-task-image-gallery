@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import './styles/searchPhotos.css';
+import './styles/searchResults.css';
+import './styles/cardList.css';
+import React from 'react';
+import SearchPhotos from "./modules/search-photos/searchPhotos"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import SearchResults from "./modules/search-results/searchResults";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <div className="App">
+              <div className="app-container">
+                  <Switch>
+                      <Route path="/search">
+                          <SearchResults />
+                      </Route>
+                      <Route path="/">
+                          <SearchPhotos />
+                      </Route>
+                  </Switch>
+              </div>
+          </div>
+      </Router>
   );
 }
 
