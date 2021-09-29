@@ -1,5 +1,31 @@
+.dropdown-menu {
+    max-width: 300px !important;
+}
+
+.share-item {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.share-item-label {
+    font-weight: 500;
+    font-size: 14px;
+    background: none;
+    padding-left: 10px;
+}
+
+.share-item-icon {
+    background: none;
+}
+
+.share-button-icon {
+    margin-right: 6px;
+}
+
 button[id^="button-view"] svg path,
-button[id^="button-view"] {
+button[id^="button-view"]{
     background-color: #fff;
     color: #767676 !important;
     fill: #767676;
@@ -14,13 +40,18 @@ button[id^="button-view"] {
     line-height: 30px;
     font-weight: 500;
     padding: 0 11px;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 button[id^="button-view"]:hover svg path,
 button[id^="button-view"]:hover {
     color: #111 !important;
+    background-color: #fff;
     fill: #111;
     border-color: #111;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 button[id^="button-like"] svg path,
@@ -79,6 +110,7 @@ svg[id^="heart-icon-like"] {
 
 button[class^=card-button] {
     display: none !important;
+    border: none !important;
 }
 
 .card:hover  {
